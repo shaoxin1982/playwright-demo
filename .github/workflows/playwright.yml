@@ -76,10 +76,9 @@ jobs:
       - name: Deploy report to GitHub Pages
         if: always()
         run: |
-          cd allure-history
-          find .git -type f -exec chmod +w {} \; 2>/dev/null || true
-          find .git -type d -exec chmod +w {} \; 2>/dev/null || true
-          rm -rf .git
+          mkdir -p gh-pages-deploy
+          cp -r allure-history/* gh-pages-deploy/ 2>/dev/null || true
+          cd gh-pages-deploy
           git init
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
