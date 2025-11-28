@@ -77,7 +77,8 @@ jobs:
         if: always()
         run: |
           cd allure-history
-          chmod -R +w .git 2>/dev/null || true
+          find .git -type f -exec chmod +w {} \; 2>/dev/null || true
+          find .git -type d -exec chmod +w {} \; 2>/dev/null || true
           rm -rf .git
           git init
           git config user.name "github-actions[bot]"
