@@ -77,6 +77,7 @@ jobs:
         if: always()
         run: |
           cd allure-history
+          rm -rf .git
           git init
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
