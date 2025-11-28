@@ -1,0 +1,54 @@
+name: Playwright Tests
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  test:
+    name: Run Playwright Tests
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+
+      - name: Install uv
+        run: |
+          curl -LsSf https://astral.sh/uv/install.sh | sh
+          echo "$HOME/.cargo/bin" >> $GITHUB_PATH
+
+      - name: Cache uv dependencies
+        uses: actions/cache@v4
+        with:
+          path: .venv
+          key: ${{ runner.os }}-uv-${{ hashFiles('uv.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-uv-
+
+      - name: Install dependencies
+        run: uv sync
+
+      - name: Install Playwright browsers
+        run: uv run playwright install --with-deps chromium
+
+      - name: Run tests
+        run: uv run pytest --alluredir=allure-results
+        continue-on-error: true
+
+      - name: Upload Allure results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: allure-results
+          path: allure-results/
+          retention-days: 30
