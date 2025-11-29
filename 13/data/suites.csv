@@ -1,0 +1,3 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"","356","test_get_started_link[chromium]","","Fri Nov 28 02:32:34 UTC 2025","passed","Fri Nov 28 02:32:34 UTC 2025","","test_example","",""
+"","237","test_has_title[chromium]","","Fri Nov 28 02:32:34 UTC 2025","passed","Fri Nov 28 02:32:34 UTC 2025","","test_example","",""

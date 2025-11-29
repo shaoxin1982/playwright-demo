@@ -1,0 +1,5 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"","2965","test_anything_get","tests.api","Sat Nov 29 01:54:27 UTC 2025","passed","Sat Nov 29 01:54:30 UTC 2025","","test_api_demo","",""
+"","240","test_has_title[chromium]","tests.ui","Sat Nov 29 01:54:31 UTC 2025","passed","Sat Nov 29 01:54:31 UTC 2025","","test_ui_example","",""
+"","318","test_get_started_link[chromium]","tests.ui","Sat Nov 29 01:54:31 UTC 2025","passed","Sat Nov 29 01:54:31 UTC 2025","","test_ui_example","",""
+"","377","test_anything_post","tests.api","Sat Nov 29 01:54:26 UTC 2025","passed","Sat Nov 29 01:54:27 UTC 2025","","test_api_demo","",""
