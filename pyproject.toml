@@ -8,5 +8,6 @@ dependencies = [
     "allure-pytest>=2.15.0",
     "pytest-playwright>=0.7.2",
     "pytest-xdist>=3.8.0",
+    "python-dotenv>=1.2.1",
     "requests>=2.32.5",
 ]
