@@ -3,7 +3,7 @@ from playwright.sync_api import Page, expect
 import allure
 import pytest
 
-@pytest.mark.api
+@pytest.mark.ui
 def test_has_title(page: Page):
     page.goto("https://playwright.dev/")
 
@@ -20,3 +20,4 @@ def test_get_started_link(page: Page):
 
     # Expects page to have a heading with the name of Installation.
     expect(page.get_by_role("heading", name="Installation")).to_be_visible()
+
