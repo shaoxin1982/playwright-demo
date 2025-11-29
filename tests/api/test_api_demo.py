@@ -2,11 +2,11 @@ import pytest
 import requests
 import json
 
-BASE_URL = "https://httpbin.org"
+# BASE_URL = "https://httpbin.org"
 
 @pytest.mark.api
-def test_anything_post():
-    url = f"{BASE_URL}/anything"
+def test_anything_post(base_url):
+    url = f"{base_url}/anything"
     payload = {
         "username": "testuser",
         "password": "testpass"
@@ -23,8 +23,8 @@ def test_anything_post():
     assert response_data["json"]["password"] == "testpass"
 
 @pytest.mark.api
-def test_anything_get():
-    url = f"{BASE_URL}/get"
+def test_anything_get(base_url):
+    url = f"{base_url}/get"
     params = {
         "name": "john",
         "age": 30
